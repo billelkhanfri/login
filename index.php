@@ -13,19 +13,22 @@
     <title>Login</title>
 </head>
 <body>
-<div class=" container wrapper"> 
-
+<div class="container"> 
+ <div class="logs"> 
     	<?php require_once(__DIR__ . '/login.php'); ?>
-  <br> 
-        <?php if (isset($logContact)) :?>
-      
+</div>
+ 
+        <?php if (isset($_SESSION['LOGGED_USER'])) :?>
+        <div class=" container wrapper"> 
+            <h1> Le contenu authorisé</h1>
+          
 <div>
     
-</div>
 
+   
 
             <?php endif ;?>
 
-    </div>
+</div>
 </body>
 </html>

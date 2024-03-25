@@ -27,7 +27,7 @@ if (
     }
 }
 
-if (!isset($logContact)){
+if (!isset($_SESSION['LOGGED_USER'])){
     $errMSG = " mot de passe ou email incorrect";
 
 
@@ -75,14 +75,14 @@ if (!isset($logContact)){
 
 
 
-<div class="logout"> 
+
 <h1> Bienvenue : <?php echo $_SESSION['LOGGED_USER'] ?></h1>
-<center> 
+
 <a href = "session.php">
 <button type="submit" class="btn btn-primary">Déconnxion</button>
 </a>
-</center>
-</div>
+
+
   
 
 
