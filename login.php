@@ -20,7 +20,8 @@ if (
     $contact['email'] === $postData['email'] && $contact['password'] === $postData['password']
 ){
 
-    $logContact = ['email' => $contact['email']];
+    //enregistrement de l'utilistaeur en session
+	$_SESSION['LOGGED_USER'] = $contact['nom'];
 }
 
     }
@@ -41,7 +42,7 @@ if (!isset($logContact)){
 
 <!-- affichages des erreur  -->
 
-<?php if (!isset($logContact)) :?>
+<?php if (!isset($_SESSION['LOGGED_USER'])) :?>
 
 <form class = 'formed' action='index.php' method="POST">
 
@@ -71,16 +72,19 @@ if (!isset($logContact)){
 <!-- si tous va bien  -->
 <?php else : ?>
 
-<?php foreach ($contacts as $contact):?>
-
-<?php if ($contact['email']=== $logContact['email']): ?>
 
 
 
-<h1> Bienvenue : <?php echo $contact['nom'] ?></h1>
-    <?php endif ;?>
+<div class="logout"> 
+<h1> Bienvenue : <?php echo $_SESSION['LOGGED_USER'] ?></h1>
+<center> 
+<a href = "session.php">
+<button type="submit" class="btn btn-primary">Déconnxion</button>
+</a>
+</center>
+</div>
+  
 
-    <?php endforeach ; ?>
 
 
 <?php endif; ?>

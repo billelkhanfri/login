@@ -1,14 +1,21 @@
-.wrapper{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.formed{
-    width: 50%;
-    margin: auto;
+.formed {
+  width: 50%;
+  margin: auto;
 }
-body{
-    background-color: aqua;
+body {
+  background-color: aqua;
+}
+.logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
 }
